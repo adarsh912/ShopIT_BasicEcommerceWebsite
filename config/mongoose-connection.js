@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
+const config = require('config'); //npm i config
 
-const uri = 'mongodb+srv://adarshdewanand912:kQaJsRrv9qSx6a7B@cluster0.37zx6.mongodb.net/BackProOne?retryWrites=true&w=majority&appName=Cluster0';
+//use of debugger .... npm i debug
+//to show the output env variable must be se..... export DEBUG=development:*
+const dbgr = require('debug')("development:mongoose");
 
-mongoose.connect(uri)
+
+mongoose.connect(`${config.get("MONGODB_URI")}/14%20BP1`)  // space in the folder name encoded as %20
     .then(function () {
-        console.log("connected");
+        dbgr("connected");
     })
     .catch(function (err) {
-        console.log(err);
+        dbgr(err);
     });
 
 
