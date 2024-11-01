@@ -20,7 +20,8 @@ app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
 app.get("/", (req, res) => {
-    res.send("hey");
+    res.render("index", { error: [] });
 });
+
 
 app.listen(3000);
