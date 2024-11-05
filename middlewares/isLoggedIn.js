@@ -12,6 +12,7 @@ module.exports = async function (req, res, next) {
         const user = await userModel
             .findOne({ email: decoded.email })
             .select("-password");
+            
         req.user = user;
         next();
     } catch (err) {
