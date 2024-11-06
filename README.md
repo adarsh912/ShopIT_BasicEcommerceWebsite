@@ -1,15 +1,5 @@
-TODO:
-CRUD
-create an item ...done .
-read...done
-update
-delete 
 
-
-
-
-
-# Project Title: Basic Shop Website 
+# Project Title: Basic Shop Website  SHOP IT
 
 A comprehensive backend application designed for efficient data management using MongoDB. This project facilitates seamless integration with a frontend application, providing robust API endpoints for various operations. It is beginner-friendly, making it a great opportunity to practice backend development and understand the concepts of backend programming.
 
@@ -28,7 +18,7 @@ Instructions on how to install and set up your project.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/BackProOne.git
+   git clone https://github.com/adarsh912/BackProOne.git
    cd BackProOne
 
 
@@ -41,5 +31,10 @@ Instructions on how to install and set up your project.
     MONGODB_URI=your_mongodb_uri,
 
 4. Start the application:
-    Copy code
     npm start
+
+5.  Screenshots
+
+
+
+![Screenshot](./Screenshots/Screenshot%202024-11-04%20at%205.38.48%20PM.png)
