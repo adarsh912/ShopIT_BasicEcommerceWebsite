@@ -10,6 +10,9 @@ const usersRouter = require('./routes/usersRouter');
 const productsRouter = require('./routes/productRouter');
 const indesRouter = require('./routes/index');
 
+process.env.SUPPRESS_NO_CONFIG_WARNING = 'true'; // Suppress config warning
+const config = require('config'); // Now require config
+
 require('dotenv').config();
 //by above one we can use anything writern in env file
 

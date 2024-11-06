@@ -1,0 +1,67 @@
+<%- include('./partials/header') %>
+
+<div class="w-full h-screen flex items-start px-20 py-20">
+    <div class="w-[25%] flex h-screen flex-col items-start">
+        <div class="flex flex-col">
+            <a class="block w-fit mb-2" href="/owners/allproducts">All Products</a>
+            <a class="block w-fit mb-2" href="/owners/createnewproduct">Create new product</a>
+        </div>
+    </div>
+    <div class="w-[75%] flex flex-col gap-5 h-screen">
+        <% if (products.length === 0) { %>
+            <div class="flex flex-col justify-center items-center w-full h-full">
+                <p class="text-lg font-semibold text-gray-700">No products found!</p>
+                <p class="text-sm text-gray-500">You don't have any products listed yet.</p>
+                <a href="/owners/createnewproduct" class="mt-4 py-2 px-5 bg-blue-500 text-white rounded-md">Add New Product</a>
+            </div>
+        <% } else { %>
+            <div class="flex items-start gap-5 flex-wrap">
+                <% products.forEach(product => { %>
+                    <div class="h-[20rem] w-[35rem] flex flex-row rounded-md overflow-hidden shadow-lg border">
+                        <!-- Product Image Section -->
+                        <div class="w-1/2 flex justify-center items-center bg-white">
+                            <img class="h-full w-full object-contain"
+                                src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+                                alt="<%= product.name %>">
+                        </div>
+
+                        <!-- Product Details Section -->
+                        <div class="w-1/2 flex flex-col justify-between p-5 bg-white">
+                            <h3 class="text-lg sm:text-2xl mb-2 font-bold">
+                                Name: <%= product.name %>
+                            </h3>
+                            <p class="text-sm text-gray-700">Discount: ₹<%= product.discount %></p>
+                            <h4 class="text-xl font-semibold text-gray-900">Price: ₹<%= product.price %></h4>
+
+                            <!-- Color Display -->
+                            <div class="mt-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-4 h-4 rounded-full bg-[<%= product.bgcolor %>]"></div>
+                                    <span class="text-sm">Background Color: <%= product.bgcolor %></span>
+                                </div>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <div class="w-4 h-4 rounded-full bg-[<%= product.textcolor %>]"></div>
+                                    <span class="text-sm">Text Color: <%= product.textcolor %></span>
+                                </div>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <div class="w-4 h-4 rounded-full bg-[<%= product.panelcolor %>]"></div>
+                                    <span class="text-sm">Panel Color: <%= product.panelcolor %></span>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex justify-between px-5 py-3 bg-white">
+                                <a href="/owners/editproduct/<%= product._id %>"
+                                    class="w-24 py-2 text-center bg-blue-500 text-white rounded-md shadow-md">Edit</a>
+                                <a href="/owners/deleteitem/<%= product._id %>"
+                                    class="w-24 py-2 text-center bg-red-500 text-white rounded-md shadow-md">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

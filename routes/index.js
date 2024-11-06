@@ -10,6 +10,12 @@ router.get('/', (req, res) => {
   res.render("index", { error, loggedIn: false });
 });
 
+// router.get('/admin', (req, res) => {
+//   // let success = req.flash("success");
+//   res.render('admin');
+// });
+
+
 router.get('/shop', isLoggedIn, async (req, res) => {
   const products = await productModel.find();
   let success = req.flash("success"); //get this for add to cart functioninig

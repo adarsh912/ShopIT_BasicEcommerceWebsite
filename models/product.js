@@ -11,7 +11,11 @@ text color
 const mongoose = require('mongoose');
 
 const productSchema = mongoose.Schema({
-
+    ownerId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'owner',  // Reference to the owner collection
+        required: true,
+    },
     image: Buffer,
     name: String,
     price: Number,
