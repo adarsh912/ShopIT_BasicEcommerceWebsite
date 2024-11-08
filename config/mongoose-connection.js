@@ -7,8 +7,9 @@ const dbgr = require('debug')("development:mongoose");
 
 
 // space in the folder name encoded as %20
-mongoose.connect(`${process.env.MONGODB_URI}/14%20BP1`, {
-    serverSelectionTimeoutMS: 120000, // 30 seconds 
+mongoose.connect(process.env.MONGODB_URI, {
+    serverSelectionTimeoutMS: 100000, // 100 seconds
+    socketTimeoutMS: 120000,
 })
     .then(function () {
         dbgr("connected");
