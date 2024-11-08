@@ -15,6 +15,8 @@ router.post('/create', isLoggedIn, upload.single('image'), async (req, res) => {
             textcolor
         } = req.body;
 
+        discount = discount ? parseFloat(discount) : 0;
+
         let product = await productModel.create({
             ownerId: req.user._id,
             image: req.file.buffer,

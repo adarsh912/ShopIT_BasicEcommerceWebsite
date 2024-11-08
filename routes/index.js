@@ -7,7 +7,9 @@ const userModel = require('../models/user-model');
 
 router.get('/', (req, res) => {
   let error = req.flash("error");
-  res.render("index", { error, loggedIn: false });
+  let success = req.flash("success");
+
+  res.render("index", { error, success, loggedIn: false });
 });
 
 // router.get('/admin', (req, res) => {
@@ -31,20 +33,63 @@ router.get('/cart', isLoggedIn, async (req, res) => {
   // console.log(user.cart);
 
 
-   const totalMRP = user.cart.reduce((sum, product) => sum + product.price, 0);
-   const discount = user.cart.reduce((sum, product) => sum + product.discount, 0);
-   const platformFee = 20; 
-   const shippingFee = 0; 
-   
+  const totalMRP = user.cart.reduce((sum, product) => sum + product.price, 0);
+  const discount = user.cart.reduce((sum, product) => sum + product.discount, 0);
+  const platformFee = 20;
+  const shippingFee = 0;
 
-   res.render('cart', { 
-       user, 
-       totalMRP, 
-       discount, 
-       platformFee, 
-       shippingFee
-   });
+  let success = req.flash("success");
 
+  res.render('cart', {
+    success,
+    user,
+    totalMRP,
+    discount,
+    platformFee,
+    shippingFee
+  });
+
+});
+
+router.post('/cart', isLoggedIn, async (req, res) => {
+  let user = await userModel.findOne({ email: req.user.email }).populate("cart");
+
+  // console.log(user.cart);
+
+
+  const totalMRP = user.cart.reduce((sum, product) => sum + product.price, 0);
+  const discount = user.cart.reduce((sum, product) => sum + product.discount, 0);
+  const platformFee = 20;
+  const shippingFee = 0;
+
+  res.render('cart', {
+    user,
+    totalMRP,
+    discount,
+    platformFee,
+    shippingFee
+  });
+
+});
+
+
+router.get('/deleteitem/:id', isLoggedIn, async (req, res) => {
+  try {
+    let user = await userModel.findOne({ email: req.user.email }).populate("cart");
+
+    // Find the item in the cart by its ID
+    let itemToDelete = user.cart.find(item => item._id.toString() === req.params.id);
+
+    // Remove the item from the cart
+    user.cart = user.cart.filter(item => item._id.toString() !== req.params.id);
+    await user.save();
+
+    req.flash("success", "removed from cart");
+    res.redirect('/cart');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error.");
+  }
 });
 
 

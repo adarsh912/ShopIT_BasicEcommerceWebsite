@@ -11,7 +11,7 @@ module.exports.registerUser = async (req, res) => {
         let user = await userModel.findOne({ email: email });
         if (user) {
             // return res.status(401).send("you already have an account . please log  in")
-            req.flash("error", "you have an account, please login");
+            req.flash("error", "You already have an account. Please log in.");
             return res.redirect('/');
         }
 
@@ -32,7 +32,8 @@ module.exports.registerUser = async (req, res) => {
                     //bring form the util/generateToken
                     let token = generateToken(user);
                     res.cookie("token", token);
-                    // res.send("user created sucessfully");
+                    req.flash("success", "user created sucessfully");
+                    res.redirect('/');
 
                 }
             });
