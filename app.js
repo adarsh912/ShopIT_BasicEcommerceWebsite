@@ -29,6 +29,7 @@ app.use(
     })
 ); //middleware to use flash msgs ...as flash msgs use sessions
 app.use(flash());
+app.set('views', path.join(__dirname, 'views')); // This line specifies where the views are located
 app.use(express.static(path.join(__dirname, "public")));
 app.set('view engine', 'ejs');
 
