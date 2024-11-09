@@ -1,5 +1,6 @@
 
-# Project Title: Basic Shop Website  SHOP IT
+# Project Title: Basic Shop Website  
+**SHOP IT**
 
 A comprehensive backend application designed for efficient data management using MongoDB. This project facilitates seamless integration with a frontend application, providing robust API endpoints for various operations. It is beginner-friendly, making it a great opportunity to practice backend development and understand the concepts of backend programming.
 
@@ -12,29 +13,104 @@ A comprehensive backend application designed for efficient data management using
 - **Environment Configuration**: Flexible configuration using .env files to manage sensitive data securely.
 
 
-## Installation
+## Installation And Setup
 
 Instructions on how to install and set up your project.
 
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/adarsh912/BackProOne.git
-   cd BackProOne
+   git clone https://github.com/adarsh912/ShopIT_BasicEcommerceWebsite.git
+   cd ShopIT_BasicEcommerceWebsite
 
-
-2. Install dependencies:
+2. **Install dependencies**
+    ```bash
     npm install
 
-3. Create a .env file in the root directory and add your environment variables:
+3. **Create a .env file in the root directory and add your environment variables**
+    ```bash
     JWT_KEY=your_jwt_key,
     EXPRESS_SESSION_SECRET=your_session_secret,
     MONGODB_URI=your_mongodb_uri,
 
-4. Start the application:
-    npm start
+5. **Start the Application**
+   Run the app locally using:
 
-5.  Screenshots
+       ```bash npm start
+    
+   Or, for automatic restarts on file changes:
+
+       ```bash npx nodemon app.js
+
+6. **Access the application**
+      
+      Visit `localhost:3000` on your web browser and you will see the home page.
+
+7. **Adding Products**  
+Go to **My Account** → **Create New Product** to upload an image, set the price, discount price, and other details. Below are the details for the first four products, which can serve as a reference for achieving the perfect UI experience and functionality.
+
+    - **Product 1: Clinge Bag**
+        - Price: 1200
+        - Discount: 0
+        - Background Color: #F4DDD2
+        - Panel Color: #DEBEAE
+        - Text Color: #774F3D
+
+    - **Product 2: BackPack**
+        - Price: 1100
+        - Discount: 0
+        - Background Color: #F3F8FB
+        - Panel Color: #D3E4EE
+        - Text Color: #48606E
+
+    - **Product 3: Multipurpose**
+        - Price: 100
+        - Discount: 0
+        - Background Color: #DEDOBF
+        - Panel Color: #C5B095
+        - Text Color: #5F4A30
+
+    - **Product 4: Pink Attack**
+        - Price: 1400
+        - Discount: 25
+        - Background Color: #F4E0E1
+        - Panel Color: #E3C4C6
+        - Text Color: #816264
 
 
 
-![Screenshot](./Screenshots/Screenshot%202024-11-04%20at%205.38.48%20PM.png)
+
+## Screenshots
+
+
+![Home Page](Screenshots/HomePage.png)  
+**Home Page**
+
+![Shop](Screenshots/Shop.png)  
+**Shop**
+
+![Cart](Screenshots/Cart.png)  
+**Cart**
+
+
+![All Products](Screenshots/AllProducts.png)  
+**All Products**
+
+![Create New Item](Screenshots/CreateNewItem.png)  
+**Create New Item**
+
+
+![Edit Products](Screenshots/EditProduct.png)  
+**Edit Exisiting Products**
+
+<!-- <table>
+  <tr>
+    <td><img src="Screenshots/LoginAlert.png" /></td>
+    <td><img src="Screenshots/NewProductAlert.png"  /></td>
+  </tr>
+  <tr>
+    <td><strong>Login Alert</strong></td>
+    <td><strong>New Product Alert</strong></td>
+  </tr>
+</table> -->
+
+Made with ❤️ by Adarsh Fulzele
