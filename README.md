@@ -81,26 +81,23 @@ Go to **My Account** → **Create New Product** to upload an image, set the pric
 
 ## Screenshots
 
-
-![Home Page](Screenshots/HomePage.png)  
 **Home Page**
+![Home Page](Screenshots/HomePage.png)  
 
-![Shop](Screenshots/Shop.png)  
 **Shop**
+![Shop](Screenshots/Shop.png)  
 
-![Cart](Screenshots/Cart.png)  
 **Cart**
+![Cart](Screenshots/Cart.png)  
 
-
-![All Products](Screenshots/AllProducts.png)  
 **All Products**
+![All Products](Screenshots/AllProducts.png)  
 
-![Create New Item](Screenshots/CreateNewItem.png)  
 **Create New Item**
+![Create New Item](Screenshots/CreateNewItem.png)  
 
-
-![Edit Products](Screenshots/EditProduct.png)  
 **Edit Exisiting Products**
+![Edit Products](Screenshots/EditProduct.png)  
 
 <!-- <table>
   <tr>
