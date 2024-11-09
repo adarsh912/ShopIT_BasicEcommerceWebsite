@@ -35,11 +35,11 @@ Instructions on how to install and set up your project.
 5. **Start the Application**
    Run the app locally using:
 
-       ``` npm start
+       npm start
     
    Or, for automatic restarts on file changes:
 
-       ``` npx nodemon app.js
+       npx nodemon app.js
 
 6. **Access the application**
       
